@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Build Particle Sim",
+      "command": "/usr/bin/clang",
+      "args": [
+        "-g",
+        "${workspaceFolder}/main.c",
+        "-o",
+        "${workspaceFolder}/sim",
+        "-I/opt/homebrew/include",
+        "-I/opt/homebrew/opt/raylib/include",
+        "-L/opt/homebrew/lib",
+        "-L/opt/homebrew/opt/raylib/lib",
+        "-lraylib",
+        "-framework", "OpenGL",
+        "-framework", "Cocoa",
+        "-framework", "IOKit",
+        "-framework", "CoreVideo"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
