@@ -2,7 +2,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Build & Run",
+      "name": "Build & Run (LLDB)",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/sim",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Build Particle Sim"
+    },
+    {
+      "name": "Build & Run (C/C++ Extension)",
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/sim",
@@ -12,6 +21,10 @@
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb",
+      "osx": {
+        "MIMode": "lldb"
+      },
+      "miDebuggerPath": "/opt/homebrew/bin/lldb-mi",
       "preLaunchTask": "Build Particle Sim"
     }
   ]

@@ -1,0 +1,13 @@
+-I/opt/homebrew/include
+-I/opt/homebrew/opt/raylib/include
+-L/opt/homebrew/lib
+-L/opt/homebrew/opt/raylib/lib
+-lraylib
+-framework
+OpenGL
+-framework
+Cocoa
+-framework
+IOKit
+-framework
+CoreVideo

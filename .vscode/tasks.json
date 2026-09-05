@@ -15,10 +15,14 @@
         "-L/opt/homebrew/lib",
         "-L/opt/homebrew/opt/raylib/lib",
         "-lraylib",
-        "-framework", "OpenGL",
-        "-framework", "Cocoa",
-        "-framework", "IOKit",
-        "-framework", "CoreVideo"
+        "-framework",
+        "OpenGL",
+        "-framework",
+        "Cocoa",
+        "-framework",
+        "IOKit",
+        "-framework",
+        "CoreVideo"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
@@ -28,6 +32,50 @@
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "type": "shell",
+      "label": "Run Particle Sim",
+      "command": "${workspaceFolder}/sim",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": "Build Particle Sim",
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "cppbuild",
+      "label": "C/C++: clang build active file",
+      "command": "/usr/bin/clang",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${workspaceFolder}/sim",
+        "-I/opt/homebrew/include",
+        "-I/opt/homebrew/opt/raylib/include",
+        "-L/opt/homebrew/lib",
+        "-L/opt/homebrew/opt/raylib/lib",
+        "-lraylib",
+        "-framework",
+        "OpenGL",
+        "-framework",
+        "Cocoa",
+        "-framework",
+        "IOKit",
+        "-framework",
+        "CoreVideo"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build",
+      "detail": "Compiler task for VS Code C/C++ extension Play button"
     }
   ]
 }
